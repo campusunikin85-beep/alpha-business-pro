@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b46">
+  <title>ALPHA BUSINESS PRO | Vérification</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #07152f;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 440px;
+      background: #102858;
+      border: 1px solid #d9aa36;
+      border-radius: 20px;
+      padding: 28px 22px;
+      text-align: center;
+      box-shadow: 0 12px 35px #0008;
+    }
+    .logo {
+      width: 105px;
+      height: 105px;
+      object-fit: contain;
+      border-radius: 18px;
+    }
+    h1 { color: #f4c64f; font-size: 24px; }
+    .subtitle { color: #dce6f8; font-size: 13px; }
+    .line { border-top: 1px solid #c69a36; margin: 22px 0; }
+    label { display: block; text-align: left; margin-bottom: 9px; }
+    input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 9px;
+      border: 1px solid #d9aa36;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #e8b83e;
+      color: #07152f;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 9px;
+    }
+    #result {
+      margin-top: 18px;
+      color: #ffe09a;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    footer { margin-top: 25px; font-size: 12px; color: #cbd6ec; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <img class="logo" src="logo.png" alt="Logo Alpha Business Pro">
+    <h1>ALPHA BUSINESS PRO</h1>
+    <p class="subtitle">PORTAIL OFFICIEL DE VÉRIFICATION</p>
+    <div class="line"></div>
+
+    <h2>Vérifier une carte</h2>
+    <p class="subtitle">Entrez le numéro d'identification figurant sur la carte.</p>
+
+    <form id="verifyForm">
+      <label for="cardNumber">Numéro d'identification</label>
+      <input id="cardNumber" type="text"
+        placeholder="Exemple : ABP-0001" required>
+      <button type="submit">VÉRIFIER LA CARTE</button>
+    </form>
+
+    <div id="result" aria-live="polite">
+      Le système de vérification est en cours de configuration.
+    </div>
+
+    <footer>
+      Votre réussite, notre priorité.<br>
+      © 2026 ALPHA BUSINESS PRO
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("verifyForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("result").textContent =
+        "Le registre officiel n'est pas encore connecté. Aucune carte ne peut être authentifiée pour le moment.";
+    });
+  </script>
+</body>
+  </html>
+      
